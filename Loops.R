@@ -20,5 +20,5 @@ while(counter < count_to + 1){
 # ----- for loop -----
 count_to <- 20
 for(i in 1:count_to){
-  print(i)
+  cat("This is iteration", i, "\n")
 }
