@@ -41,7 +41,7 @@ is.character(CharacterVector)
 seq() # Sequence, like ":"
 rep() # Replicate
 
-SequenceVector <- seq(1,16,2)
+SequenceVector <- seq(1,20,1)
 SequenceVector
 
 RepeatVector <- rep(3.14, 20)
@@ -49,3 +49,11 @@ RepeatVector
 
 MetaRepeat <- rep(SequenceVector, 5)
 MetaRepeat
+
+# Accessing vectors
+SequenceVector[1]   # Indexing starts at 1
+SequenceVector[1:2]
+SequenceVector[-1]  # Coming from python, this is so ridiculous 
+SequenceVector[c(-2,-3,-4,-5)]
+SequenceVector[-3:-5]
+
