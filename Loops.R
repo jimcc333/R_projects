@@ -22,3 +22,19 @@ count_to <- 20
 for(i in 1:count_to){
   cat("This is iteration", i, "\n")
 }
+
+
+# ----- if statement -----
+x <- rnorm(1)
+rm(answer)  # removes variable, not necessary
+if(x > 1){
+  answer <- "Greater than 1"
+} else {
+  answer <- "Not greater than 1"
+}
+
+
+
+
+
+

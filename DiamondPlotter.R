@@ -1,6 +1,6 @@
 # Plots data about diamond prices
 
-mydata <- read.csv(file.choose()) # Select the Misplaced-Diamonds.csv
+mydata <- read.csv(file.choose()) # Select Misplaced-Diamonds.csv
 
 
 install.packages("ggplot2")
