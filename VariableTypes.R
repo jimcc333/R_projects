@@ -57,8 +57,22 @@ SequenceVector[-1]  # Coming from python, this is so ridiculous
 SequenceVector[c(-2,-3,-4,-5)]
 SequenceVector[-3:-5]
 
+# Column and row names
+vector1 <- 1:5
+names(vector1) <- c("a","b","c","d","e")
+vector1["a"]
+vector1[1]
+names(vector1)
+vector1
 
+temp.vec <- rep(c("A","B","zZ"),each=3)
+temp.vec
 
+first.matrix = matrix(temp.vec, 3,3)
+first.matrix
 
+rownames(first.matrix) <- c("Hello", "world", "!")
+colnames(first.matrix) <- c("first","second","third")
+first.matrix
 
 
