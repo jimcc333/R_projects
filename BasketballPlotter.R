@@ -45,3 +45,10 @@ RowPlotter(Games)
 RowPlotter(FieldGoals / MinutesPlayed)
 RowPlotter(Points / FieldGoals)
 
+# Free throw plots
+RowPlotter(FreeThrows)
+RowPlotter(FreeThrows / Games)
+RowPlotter(FreeThrows / FTAs)
+
+
+
