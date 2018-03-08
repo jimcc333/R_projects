@@ -35,49 +35,67 @@ plot3 + geom_point(size=4)
 # Histogram of budgets showing associated genre
 (
   plot5 <- ggplot(data=ratings_df, aes(x=Budget)) + 
-    geom_histogram(binwidth = 10, aes(fill=Genre), color="Black")
+    geom_histogram(binwidth = 10, aes(fill=Genre), color="Black") +
+    ggtitle("Budgets of Movies")
 
  )
 
 # Density chart
 (
   plot6 <-ggplot(data=ratings_df, aes(x=Budget)) + 
-    geom_density(aes(fill=Genre), position="stack")
+    geom_density(aes(fill=Genre), position="stack") +
+    ggtitle("Budget Density")
 )
 
 # Public and Critics ratings histogram
 (
   plot7 <- ggplot(data=ratings_df) +
     geom_histogram(binwidth = 10, aes(x=PublicRating), fill="white", color="Blue") +
-    xlab("Public Rating")
+    xlab("Public Rating") +
+    ggtitle("Public Ratings Distribution")
 )
 (
   plot8 <- ggplot(data=ratings_df) +
     geom_histogram(binwidth = 10, aes(x=CriticRating), fill="white", color="Red") +
-    xlab("Critic Rating")
+    xlab("Critic Rating") +
+    ggtitle("Critic Ratings Distribution")
 )
 
 # Smooth plot of critic vs public ratings
 (
   plot9 <- ggplot(data=ratings_df, aes(x=CriticRating, y=PublicRating, color=Genre)) +
-    geom_point() + geom_smooth(fill=NA)
+    geom_point() + geom_smooth(fill=NA)+
+    ggtitle("Public vs critic Ratings by Genre")
 )
 
 # Box plot with all data of critic ratings per genre
 (
   boxplot1 <- ggplot(data=ratings_df, aes(x=Genre, y=CriticRating, color=Genre)) +
-    geom_boxplot(size=1.2) + geom_jitter(size=2, alpha=0.2)
+    geom_boxplot(size=1.2) + geom_jitter(size=2, alpha=0.2) +
+    ggtitle("Critic Ratings by Genre")
 )
 
 # Box plot with all data of public ratings per genre
 (
   boxplot2 <- ggplot(data=ratings_df, aes(x=Genre, y=PublicRating, color=Genre)) +
-    geom_boxplot(size=1.2) + geom_jitter(size=2, alpha=0.2)
+    geom_boxplot(size=1.2) + geom_jitter(size=2, alpha=0.2) +
+    ggtitle("Public Ratings by Genre")
 )
 
 # Box plot with critic rating over scatter of public ratings per genre
 (
   box_scatter <- ggplot(data=ratings_df, aes(x=Genre, y=CriticRating, color=Genre)) +
-    geom_boxplot(size=1.2) + geom_jitter(aes(y=ratings_df$CriticRating, alpha=0.5))
+    geom_boxplot(size=1.2) + geom_jitter(aes(y=ratings_df$CriticRating, alpha=0.5)) +
+    ggtitle("Critic rating comparison")
 )
+
+# Show budget distribution by genre
+(
+facet_plot <- ggplot(data=ratings_df, aes(x=Budget)) + 
+  geom_histogram(binwidth = 10, aes(fill=Genre), color="Black") +
+  facet_grid(Genre~., scales="free") + xlim(0,200) +
+    ggtitle("Budget Distribution by Movie Genre")
+)
+
+
 
