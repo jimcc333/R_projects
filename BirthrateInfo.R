@@ -58,6 +58,23 @@ birth_stats[birth_stats$Income.Group == "High income",]
 birth_stats[birth_stats$Country.Name == "Malta",]
 
 
+# >>> Plot data
+
+install.packages("ggplot2")
+library("ggplot2")
+
+qplot(data=birth_stats, x=Internet.users)
+qplot(data=birth_stats, x=Income.Group, y=Birth.rate, size=I(5))
+qplot(data=birth_stats, x=Income.Group, y=Internet.users, size=I(5))
+qplot(data=birth_stats, x = Income.Group, y=Internet.users, size=I(5), geom="boxplot")
+
+qplot(data=birth_stats, x = Internet.users, y = Birth.rate)
+qplot(data=birth_stats, x = Internet.users, y = Birth.rate,
+      size=I(3),color=I("red"))
+qplot(data=birth_stats, x = Internet.users, y = Birth.rate,
+      size=I(3),color=Income.Group)
+
+
 
 
 
