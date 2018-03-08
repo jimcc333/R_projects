@@ -75,4 +75,9 @@ rownames(first.matrix) <- c("Hello", "world", "!")
 colnames(first.matrix) <- c("first","second","third")
 first.matrix
 
+# Data frames
+new_dataframe <- data.frame(Country=birth_stats$Country.Name, Code=birth_stats$Country.Code)
+
+merged_df <- merge(birth_stats, new_dataframe, by.x = "Country.Code", by.y = "Code")
+merged_df$Country.Name <- NULL
 

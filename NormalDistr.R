@@ -1,4 +1,5 @@
 # Tests the normal distribution in R using law of large numbers
+# note: runif() function is random uniform distribution
 
 N <- 100000   # Number of trials
 pass_count <- 0L   # Number of trials within the range

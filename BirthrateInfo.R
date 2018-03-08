@@ -72,8 +72,8 @@ qplot(data=birth_stats, x = Internet.users, y = Birth.rate)
 qplot(data=birth_stats, x = Internet.users, y = Birth.rate,
       size=I(3),color=I("red"))
 qplot(data=birth_stats, x = Internet.users, y = Birth.rate,
-      size=I(3),color=Income.Group)
-
+      size=I(7),color=Income.Group, shape=I(20), alpha=I(0.9),
+      main="Birth Rates per Internet Users")
 
 
 
