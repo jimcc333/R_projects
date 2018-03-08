@@ -35,10 +35,27 @@ birth_stats[,"Internet.users"]
 birth_stats[3, "Birth.rate"]
 levels(birth_stats$Income.Group)
 
+# Subsetting
+birth_stats[2:6,]
+birth_stats[c(2,5,9),]
+is.data.frame(birth_stats[1,])  # No need to drop=F
+is.data.frame(birth_stats[,1])  # Yes need to drop=F
 
+# Mess with columns
+birth_stats$new_column <- birth_stats$Birth.rate * birth_stats$Internet.users
+head(birth_stats)
+birth_stats$new_column <- NULL
 
+# Filtering
+internet_filter <- birth_stats$Internet.users < 2
+birth_stats[internet_filter,]
+birth_stats[birth_stats$Internet.users < 2,]  # In one line
 
+birth_stats[birth_stats$Birth.rate > 40 & birth_stats$Internet.users < 2,]
 
+birth_stats[birth_stats$Income.Group == "High income",]
+
+birth_stats[birth_stats$Country.Name == "Malta",]
 
 
 
