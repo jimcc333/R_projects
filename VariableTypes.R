@@ -1,5 +1,7 @@
 # Quick survey of data types in R
 
+search()
+
 # Integer
 x <- 2L
 typeof(x) # Confrm

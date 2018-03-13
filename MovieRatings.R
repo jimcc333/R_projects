@@ -63,7 +63,7 @@ plot3 + geom_point(size=4)
 
 # Smooth plot of critic vs public ratings
 (
-  plot9 <- ggplot(data=ratings_df, aes(x=CriticRating, y=PublicRating, color=Genre)) +
+  plot9 <- ggplot(data=ratings_df, aes(x=scale(CriticRating), y=scale(PublicRating), color=Genre)) +
     geom_point() + geom_smooth(fill=NA)+
     ggtitle("Public vs critic Ratings by Genre")
 )
